@@ -1,4 +1,5 @@
 import streamlit as st
+import datetime
 
 st.title("🎓 Profil Biodata Mahasiswa")
 st.write("Silakan lengkapi biodata berikut")
@@ -12,7 +13,11 @@ aldi_jenis_kelamin = st.radio("Jenis Kelamin", ["Laki-laki", "Perempuan"])
 
 # Tempat & Tanggal Lahir
 aldi_tempat_lahir = st.text_input("Tempat Lahir")
-aldi_tanggal_lahir = st.date_input("Tanggal Lahir")
+aldi_tanggal_lahir = st.date_input(
+    "Tanggal Lahir",
+    min_value=datetime.date(1990, 1, 1),
+    max_value=datetime.date.today()
+)
 
 # Alamat
 aldi_alamat = st.text_area("Alamat")
